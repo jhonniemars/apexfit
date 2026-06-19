@@ -877,11 +877,9 @@
         body: JSON.stringify(webhookData)
     });
 
-    // Make.com returns "Accepted" as plain text, which is OK
     const text = await response.text();
     console.log('Webhook response:', text);
     
-    // Just show success and move to confirmation
     goToStep(3);
 } catch (error) {
     console.error('Error:', error);
