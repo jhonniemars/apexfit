@@ -877,6 +877,7 @@ async function confirmBooking() {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
                        'July', 'August', 'September', 'October', 'November', 'December'];
     const formattedDate = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getDate()}, ${selectedDate.getFullYear()} · ${selectedTime}`;
+    const dateOnly = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getDate()}, ${selectedDate.getFullYear()}`;
     
     document.getElementById('confirmDate').textContent = formattedDate;
     window.bookingData.date = formattedDate;
@@ -890,10 +891,10 @@ async function confirmBooking() {
         firstName: window.bookingData.firstName,
         email: window.bookingData.email,
         phone: window.bookingData.phone,
-        date: formattedDate,
+        date: dateOnly,  // ← Changed from formattedDate to dateOnly
         time: selectedTime,
         selectedDateRaw: selectedDateTime,
-        service: 'Free Consultation',
+        service: '30 minute Consultation',
         timestamp: new Date().toISOString()
     };
     
