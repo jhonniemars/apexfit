@@ -873,21 +873,9 @@ if (timeParts) {
     if (period === 'AM' && hours === 12) hours = 0;
     
     selectedDateTime.setHours(hours, minutes, 0, 0);
-}
-
-// Webhook to Make.com
-const webhookData = {
-    firstName: window.bookingData.firstName,
-    email: window.bookingData.email,
-    phone: window.bookingData.phone,
-    date: formattedDate,
-    time: selectedTime,
-    selectedDateRaw: selectedDateTime.toISOString(), // ← This now uses the combined date/time
-    service: 'Free Consultation',
-    timestamp: new Date().toISOString()
-};
-  
-    // Webhook to Make.com
+} 
+   
+     // Webhook to Make.com
     const webhookData = {
     firstName: window.bookingData.firstName,
     email: window.bookingData.email,
