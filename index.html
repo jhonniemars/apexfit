@@ -866,7 +866,7 @@
         phone: window.bookingData.phone,
         date: formattedDate,
         time: selectedTime,
-        selectedDateRaw: combineDateAndTime(selectedDate, selectedTime),
+        selectedDateRaw: selectedDate.toISOString(),
         service: 'Free Consultation',
         timestamp: new Date().toISOString()
     };
